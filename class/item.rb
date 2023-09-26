@@ -1,27 +1,13 @@
 require 'date'
 
-class item
-  attr_accessor :publish_date, :archived
-  attr_reader :genre, :author, :label
+class Item
+  attr_accessor :publish_date, :archived, :genre, :author, :label
 
   def initialize(publish_date, archived: false)
     @id = rand(1_000_000)
-    @publish_date = publish_date
+    @publish_date = Date.parse(publish_date)
     @archived = archived
   end
-
-  def genre=(genre)
-    @genre = genre
-  end
-
-  def author=(author)
-    @author=author
-  end
-
-  def label=(label)
-    @label=label
-  end
-
 
   def can_be_archived?
     current_date = Date.today
@@ -30,10 +16,7 @@ class item
   end
 
   def move_to_archive
-      if can_be_archived?
-        @archived = true
-      end
-      return @archived
+    @archived = true if can_be_archived?
+    @archived
   end
-
 end
