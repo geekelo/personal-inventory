@@ -17,10 +17,6 @@ class Item
     @label.items.push(self) unless @label.items.include?(self)
   end
 
-  def source=(source)
-    @source = source
-  end
-
   def can_be_archived?
     current_date = Date.today
     year = current_date.year - @publish_date.year

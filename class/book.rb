@@ -8,6 +8,7 @@ class Book < Item
     @cover_state = cover_state
     @publisher = publisher
     @label = label
+    @author = author
   end
 
   def can_be_archived?
