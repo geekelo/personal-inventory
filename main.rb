@@ -1,3 +1,6 @@
+require_relative 'class/item'
+require_relative 'class/movie'
+require_relative 'class/source'
 require 'json'
 
 # Load existing data from JSON files (if any)
@@ -6,7 +9,7 @@ def load_data
   if File.exist?('data/movies.json')
     File.open('data/movies.json', 'r') do |file|
       file.each_line do |line|
-        movies << Item.from_json(line)
+        movies << Movie.from_json(line)
       end
     end
   end
@@ -57,7 +60,13 @@ loop do
   when 2
     # your code here
   when 3
-    # your code here
+    # List All Movies
+    puts "List of Movies:"
+    movies.each do |item|
+
+        puts "- Title: #{item.title}, Genre: #{item.genre}, Published: #{item.publish_date}, Archived: #{item.archived}"
+
+    end
   when 4
     # your code here
   when 5
@@ -67,13 +76,32 @@ loop do
   when 7
     # your code here
   when 8
-    # your code here
+    # List All Sources
+    puts "List of Sources:"
+    sources = movies.map(&:source).uniq.compact
+    sources.each do |source|
+      puts "- Name: #{source}"
+    end
   when 9
     # your code here
   when 10
     # your code here
   when 11
-    # your code here
+    # Add A Movie
+    puts "Enter movie title:"
+    title = gets.chomp
+    puts "Enter publish date (YYYY-MM-DD):"
+    publish_date = gets.chomp
+    puts "Is it silent? (y/n)"
+    if gets.chomp.downcase == 'y'
+        silent = true
+    end
+
+    movie = Movie.new(title, publish_date, silent: silent)
+    movie.move_to_archive
+    movies << movie
+
+    puts "Movie added!"
   when 12
     # your code here
   when 13
@@ -83,8 +111,21 @@ loop do
   when 15
     # your code here
   when 16
-    # your code here
+    # Add Movie Source
+    puts "Enter source name:"
+    source_name = gets.chomp
+  
+    source = Source.new(source_name)
+    movies.each do |item|
+      if item.source.nil?
+        item.source = source.name
+      end
+    end
+  
+    puts "Source added!"
   when 17
+    # Save Movies data to JSON files before exiting
+    save_data(movies)
     puts 'Thanks for using Catalog of My Things app!'
     break
   else
