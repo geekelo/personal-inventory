@@ -2,7 +2,7 @@ require 'date'
 # require_relative 'genre'
 
 class Item
-  attr_accessor :title, :publish_date, :archived, :genre, :author, :source
+  attr_accessor :title, :publish_date, :archived, :source, :genre, :author
   attr_reader :label
 
   def initialize(title, publish_date, archived: false)
@@ -17,7 +17,9 @@ class Item
     @label.items.push(self) unless @label.items.include?(self)
   end
 
-  attr_writer :source
+  def source=(source)
+    @source = source
+  end
 
   def can_be_archived?
     current_date = Date.today

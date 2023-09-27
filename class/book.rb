@@ -2,7 +2,7 @@ class Book < Item
   attr_accessor :title, :author, :publisher, :cover_state, :publish_date, :label
   attr_reader :id
 
-  def initialize(title, _author, publisher, cover_state, publish_date, label)
+  def initialize(author, publisher, cover_state, publish_date, label)
     super(title, publish_date)
     @id = rand(100_000)
     @cover_state = cover_state
