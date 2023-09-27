@@ -1,5 +1,5 @@
 class Book < Item
-  attr_accessor :title, :author, :publisher, :cover_state, :publish_date, :label
+  attr_accessor :title, :author, :publisher, :cover_state, :publish_date
   attr_reader :id
 
   def initialize(author, publisher, cover_state, publish_date, label)
