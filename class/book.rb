@@ -11,6 +11,11 @@ class Book < Item
     @author = author
   end
 
+  def label=(label)
+    @label = label
+    @label.items.push(self) unless @label.items.include?(self)
+  end
+
   def can_be_archived?
     if @cover_state == 'bad' || super
       true
