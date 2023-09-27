@@ -17,9 +17,7 @@ class Item
     @label.items.push(self) unless @label.items.include?(self)
   end
 
-  def source=(source)
-    @source = source
-  end
+  attr_writer :source
 
   def can_be_archived?
     current_date = Date.today

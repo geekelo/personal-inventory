@@ -61,11 +61,9 @@ loop do
     # your code here
   when 3
     # List All Movies
-    puts "List of Movies:"
+    puts 'List of Movies:'
     movies.each do |item|
-
-        puts "- Title: #{item.title}, Genre: #{item.genre}, Published: #{item.publish_date}, Archived: #{item.archived}"
-
+      puts "- Title: #{item.title}, Genre: #{item.genre}, Published: #{item.publish_date}, Archived: #{item.archived}"
     end
   when 4
     # your code here
@@ -77,7 +75,7 @@ loop do
     # your code here
   when 8
     # List All Sources
-    puts "List of Sources:"
+    puts 'List of Sources:'
     sources = movies.map(&:source).uniq.compact
     sources.each do |source|
       puts "- Name: #{source}"
@@ -88,20 +86,18 @@ loop do
     # your code here
   when 11
     # Add A Movie
-    puts "Enter movie title:"
+    puts 'Enter movie title:'
     title = gets.chomp
-    puts "Enter publish date (YYYY-MM-DD):"
+    puts 'Enter publish date (YYYY-MM-DD):'
     publish_date = gets.chomp
-    puts "Is it silent? (y/n)"
-    if gets.chomp.downcase == 'y'
-        silent = true
-    end
+    puts 'Is it silent? (y/n)'
+    silent = true if gets.chomp.downcase == 'y'
 
     movie = Movie.new(title, publish_date, silent: silent)
     movie.move_to_archive
     movies << movie
 
-    puts "Movie added!"
+    puts 'Movie added!'
   when 12
     # your code here
   when 13
@@ -112,17 +108,15 @@ loop do
     # your code here
   when 16
     # Add Movie Source
-    puts "Enter source name:"
+    puts 'Enter source name:'
     source_name = gets.chomp
-  
+
     source = Source.new(source_name)
     movies.each do |item|
-      if item.source.nil?
-        item.source = source.name
-      end
+      item.source = source.name if item.source.nil?
     end
-  
-    puts "Source added!"
+
+    puts 'Source added!'
   when 17
     # Save Movies data to JSON files before exiting
     save_data(movies)
