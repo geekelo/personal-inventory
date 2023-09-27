@@ -1,5 +1,4 @@
 require 'date'
-# Require the Genre class from genre.rb
 require_relative 'genre'
 
 class Item
