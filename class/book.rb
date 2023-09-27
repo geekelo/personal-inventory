@@ -7,14 +7,14 @@ class Book < Item
     @id = rand(100000);
     @cover_state = cover_state
     @publisher = publisher
-    @label = label
+    @label = label 
   end
 
   def can_be_archived?
     if @cover_state == 'bad' || super
       true        
     else
-        false
+      false
     end 
    end
 end
