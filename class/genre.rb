@@ -1,4 +1,4 @@
-require'securerandom'
+require 'securerandom'
 
 class Genre
   attr_accessor :name

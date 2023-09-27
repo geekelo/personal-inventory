@@ -3,21 +3,13 @@ require 'date'
 require_relative 'genre'
 
 class Item
-  attr_accessor :publish_date, :archived
-  attr_reader :genre, :author, :label
+  attr_accessor :publish_date, :archived, :genre, :author
+  attr_reader :label
 
   def initialize(publish_date, archived: false)
     @id = rand(1_000_000)
     @publish_date = Date.parse(publish_date)
     @archived = archived
-  end
-  
-  def genre=(genre)
-    @genre = genre
-  end
-
-  def author=(author)
-    @author = author
   end
 
   def label=(label)
@@ -33,6 +25,6 @@ class Item
 
   def move_to_archive
     @archived = true if can_be_archived?
-    @archived 
+    @archived
   end
 end
