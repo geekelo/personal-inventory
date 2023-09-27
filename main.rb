@@ -4,14 +4,21 @@ def display_menu
   puts '------------------------------------------------------'
   puts '1 - List all books'
   puts '2 - List all music albums'
-  puts '3 - List of games'
-  puts "4 - List all genres (e.g 'Comedy', 'Thriller')"
-  puts "5 - List all labels (e.g. 'Gift', 'New')"
-  puts "6 - List all authors (e.g. 'Stephen King')"
-  puts '7 - Add a book'
-  puts '8 - Add a music album'
-  puts '9 - Add a game'
-  puts '10 - Exit'
+  puts '3 - List all movies'
+  puts '4 - List of games'
+  puts "5 - List all genres (e.g 'Comedy', 'Thriller')"
+  puts "6 - List all labels (e.g. 'Gift', 'New')"
+  puts "7 - List all authors (e.g. 'Stephen King')"
+  puts "8 - List all sources (e.g. 'From a friend', 'Online shop')"
+  puts '9 - Add a book'
+  puts '10 - Add a music album'
+  puts '11 - Add a movie'
+  puts '12 - Add a game'
+  puts '13 - Add a genre'
+  puts '14 - Add a label'
+  puts '15 - Add a author'
+  puts '16 - Add a source'
+  puts '17 - Exit'
 end
 
 loop do
@@ -37,6 +44,20 @@ loop do
   when 9
     # your code here
   when 10
+    # your code here
+  when 11
+    # your code here
+  when 12
+    # your code here
+  when 13
+    # your code here
+  when 14
+    # your code here
+  when 15
+    # your code here
+  when 16
+    # your code here
+  when 17
     puts 'Thanks for using Catalog of My Things app!'
     break
   else
