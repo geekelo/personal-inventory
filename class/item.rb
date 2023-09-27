@@ -2,18 +2,13 @@ require 'date'
 # require_relative 'genre'
 
 class Item
-  attr_accessor :publish_date, :archived, :genre, :author
-  attr_reader :label
+  attr_accessor :title, :publish_date, :archived, :source, :genre, :author, :label
 
-  def initialize(publish_date, archived: false)
+  def initialize(title, publish_date, archived: false)
     @id = rand(1_000_000)
     @publish_date = Date.parse(publish_date)
     @archived = archived
-  end
-
-  def label=(label)
-    @label = label
-    @label.items.push(self) unless @label.items.include?(self)
+    @title = title
   end
 
   def can_be_archived?
