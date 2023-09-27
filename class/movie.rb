@@ -6,8 +6,7 @@ class Movie < Item
   end
 
   def can_be_archived?
-    if super || @silent
-      return true
+    return true if super || @silent
     else
       false
     end

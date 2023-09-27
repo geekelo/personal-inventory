@@ -1,3 +1,30 @@
+require 'json'
+
+# Load existing data from JSON files (if any)
+def load_data
+  movies = []
+  if File.exist?('data/movies.json')
+    File.open('data/movies.json', 'r') do |file|
+      file.each_line do |line|
+        movies << Item.from_json(line)
+      end
+    end
+  end
+  movies
+end
+
+# Save data to JSON files
+def save_data(movies)
+  File.open('data/movies.json', 'w') do |file|
+    movies.each do |item|
+      file.puts JSON.dump(item.to_json)
+    end
+  end
+end
+
+# Initialize movies
+movies = load_data
+
 def display_menu
   puts '------------------------------------------------------'
   puts 'Welcome to the Catalog of My Things!'

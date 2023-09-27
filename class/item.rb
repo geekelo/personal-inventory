@@ -9,6 +9,7 @@ class Item
     @id = rand(1_000_000)
     @publish_date = Date.parse(publish_date)
     @archived = archived
+    @title = title
   end
 
   def label=(label)
@@ -16,9 +17,7 @@ class Item
     @label.items.push(self) unless @label.items.include?(self)
   end
 
-  def source=(source)
-    @source = source
-  end
+  attr_writer :source
 
   def can_be_archived?
     current_date = Date.today
