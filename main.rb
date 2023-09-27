@@ -1,3 +1,4 @@
+
 def display_menu
   puts '------------------------------------------------------'
   puts 'Welcome to the Catalog of My Things!'
@@ -30,7 +31,7 @@ loop do
     when 6
     # your code here
     when 7
-    # your code here
+    #your code here
     when 8
     # your code here
     when 9
