@@ -6,7 +6,7 @@ require_relative 'class/genre'
 require 'json'
 
 # Load existing data from MOVIES JSON files (if any)
-def load_data
+def movies_load_data
   movies = []
   if File.exist?('data/movies.json')
     File.open('data/movies.json', 'r') do |file|
@@ -19,7 +19,7 @@ def load_data
 end
 
 # Save data to MOVIES JSON files
-def save_data(movies)
+def movies_save_data(movies)
   File.open('data/movies.json', 'w') do |file|
     movies.each do |item|
       file.puts JSON.dump(item.to_json)
@@ -28,7 +28,7 @@ def save_data(movies)
 end
 
 # Initialize movies
-movies = load_data
+movies = movies_load_data
 
 # Load existing data from MUSIC_ALBUMS JSON files (if any)
 def music_load_data
@@ -94,7 +94,7 @@ loop do
     # List All Movies
     puts 'List of Movies:'
     movies.each do |item|
-      puts "- Title: #{item.title}, Genre: #{item.genre}, Published: #{item.publish_date}, Archived: #{item.archived}"
+      puts "- Title: #{item.title}, Source: #{item.source}, Published: #{item.publish_date}, Archived: #{item.archived}"
     end
   when 4
     # your code here
@@ -176,7 +176,7 @@ loop do
     puts 'Source added!'
   when 17
     # Save Movies data to JSON files before exiting
-    save_data(movies)
+    movies_save_data(movies)
     # Save Music_album data to JSON files before exiting
     music_save_data(music_albums)
     puts 'Thanks for using Catalog of My Things app!'
