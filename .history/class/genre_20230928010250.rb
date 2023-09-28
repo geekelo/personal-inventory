@@ -7,10 +7,11 @@ class Genre
     @name = name
     @items = []
   end
+end
+
 
   def add_item(item)
-    item.genre = self
+    item.source = self
     @items << item
   end
 end
-
