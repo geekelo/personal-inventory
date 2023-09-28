@@ -177,8 +177,8 @@ loop do
   when 17
     # Save Movies data to JSON files before exiting
     save_data(movies)
-    # Save Music_album data to JSON files before exiting
-    music_save_data(music_albums)
+    # Save Movies data to JSON files before exiting
+    save_data(movies)
     puts 'Thanks for using Catalog of My Things app!'
     break
   else

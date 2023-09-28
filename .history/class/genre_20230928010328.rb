@@ -13,3 +13,4 @@ class Genre
     @items << item
   end
 end
+

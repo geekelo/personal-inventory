@@ -149,16 +149,7 @@ loop do
   when 12
     # your code here
   when 13
-    # Add Music_album genre
-    puts 'Enter genre name:'
-    genre_name = gets.chomp
-
-    genre = Genre.new(genre_name)
-    music_albums.each do |item|
-      item.genre = genre.name if item.genre.nil?
-    end
-
-    puts 'Genre added!'
+    # your code here
   when 14
     # your code here
   when 15
@@ -177,8 +168,6 @@ loop do
   when 17
     # Save Movies data to JSON files before exiting
     save_data(movies)
-    # Save Music_album data to JSON files before exiting
-    music_save_data(music_albums)
     puts 'Thanks for using Catalog of My Things app!'
     break
   else

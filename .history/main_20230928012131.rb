@@ -155,10 +155,10 @@ loop do
 
     genre = Genre.new(genre_name)
     music_albums.each do |item|
-      item.genre = genre.name if item.genre.nil?
+      item.genre = genre.name if item.source.nil?
     end
 
-    puts 'Genre added!'
+    puts 'Source added!'
   when 14
     # your code here
   when 15
@@ -177,8 +177,6 @@ loop do
   when 17
     # Save Movies data to JSON files before exiting
     save_data(movies)
-    # Save Music_album data to JSON files before exiting
-    music_save_data(music_albums)
     puts 'Thanks for using Catalog of My Things app!'
     break
   else

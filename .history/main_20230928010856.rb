@@ -30,8 +30,8 @@ end
 # Initialize movies
 movies = load_data
 
-# Load existing data from MUSIC_ALBUMS JSON files (if any)
-def music_load_data
+# Load existing data from MUSIC_ALBUM JSON files (if any)
+def load_data
   music_albums = []
   if File.exist?('data/music_album.json')
     File.open('data/music_album.json', 'r') do |file|
@@ -44,16 +44,16 @@ def music_load_data
 end
 
 # Save data to MUSIC_ALBUMS JSON files
-def music_save_data(music_albums)
-  File.open('data/music_album.json', 'w') do |file|
-    music_albums.each do |item|
+def save_data(movies)
+  File.open('data/movies.json', 'w') do |file|
+    movies.each do |item|
       file.puts JSON.dump(item.to_json)
     end
   end
 end
 
-# Initialize music_albums
-music_albums = music_load_data
+# Initialize movies
+movies = load_data
 
 def display_menu
   puts '------------------------------------------------------'
@@ -85,11 +85,7 @@ loop do
   when 1
     # your code here
   when 2
-    # List All Music Albums
-    puts 'List of Music_albums:'
-    music_albums.each do |item|
-      puts "- Title: #{item.title}, Genre: #{item.genre}, Published: #{item.publish_date}, Archived: #{item.archived}"
-    end
+    # your code here
   when 3
     # List All Movies
     puts 'List of Movies:'
@@ -99,12 +95,7 @@ loop do
   when 4
     # your code here
   when 5
-    # List All Genre
-    puts 'List of Genre:'
-    genres = music_albums.map(&:genre).uniq.compact
-    genres.each do |genre|
-      puts "- Name: #{genre}"
-    end
+    # your code here
   when 6
     # your code here
   when 7
@@ -119,19 +110,7 @@ loop do
   when 9
     # your code here
   when 10
-    # Add A Music
-    puts 'Enter music_album title:'
-    title = gets.chomp
-    puts 'Enter publish date (YYYY-MM-DD):'
-    publish_date = gets.chomp
-    puts 'Is it on_spotify? (y/n)'
-    on_spotify = true if gets.chomp.downcase == 'y'
-
-    music_album = MusicAlbum.new(title, publish_date, on_spotify: on_spotify)
-    music_album.move_to_archive
-    music_albums << music_album
-
-    puts 'Music_album added!'
+    # your code here
   when 11
     # Add A Movie
     puts 'Enter movie title:'
@@ -149,16 +128,7 @@ loop do
   when 12
     # your code here
   when 13
-    # Add Music_album genre
-    puts 'Enter genre name:'
-    genre_name = gets.chomp
-
-    genre = Genre.new(genre_name)
-    music_albums.each do |item|
-      item.genre = genre.name if item.genre.nil?
-    end
-
-    puts 'Genre added!'
+    # your code here
   when 14
     # your code here
   when 15
@@ -177,8 +147,6 @@ loop do
   when 17
     # Save Movies data to JSON files before exiting
     save_data(movies)
-    # Save Music_album data to JSON files before exiting
-    music_save_data(music_albums)
     puts 'Thanks for using Catalog of My Things app!'
     break
   else
