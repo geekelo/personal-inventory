@@ -15,7 +15,7 @@ class Movie < Item
       title: @title,
       publish_date: @publish_date.to_s,
       archived: @archived,
-      source: @source,
+      source: @source
     }
   end
 
