@@ -2,8 +2,13 @@ class Movie < Item
   attr_accessor :silent, :title
 
   def initialize(title, publish_date, silent: false)
-    super(title, publish_date)
+    super(publish_date)
     @silent = silent
+    @title = title
+  end
+
+  def source=(source)
+    @source = source || 'unknown'
   end
 
   def can_be_archived?
