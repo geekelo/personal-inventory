@@ -7,7 +7,7 @@ class Movie < Item
   end
 
   def can_be_archived?
-    true if super || @silent
+    super || @silent
   end
 
   def to_json(*_args)
