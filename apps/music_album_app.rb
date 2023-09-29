@@ -7,6 +7,7 @@ class MusicAlbumApp
     # Initialize music_albums
     @music_albums = music_load_data
   end
+
   # Load existing data from MUSIC_ALBUMS JSON files (if any)
   def music_load_data
     music_albums = []
@@ -23,7 +24,7 @@ class MusicAlbumApp
   # Save data to MUSIC_ALBUMS JSON files
   def music_save_data(music_albums)
     File.open('data/music_album.json', 'w') do |file|
-      @music_albums.each do |item|
+      music_albums.each do |item|
         file.puts JSON.dump(item.to_json)
       end
     end
