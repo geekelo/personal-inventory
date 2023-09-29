@@ -1,5 +1,6 @@
 require_relative '../class/book'
 require_relative '../class/label'
+require_relative 'book_helper'
 
 class BookApp
   attr_accessor :items, :books, :labels
@@ -8,6 +9,8 @@ class BookApp
     @items = []
     @labels = []
     @books = []
+    load_books
+    load_labels
   end
 
   def add_book
@@ -81,6 +84,28 @@ class BookApp
   def list_labels
     @labels.each do |label|
       puts "#{label.id}. title: #{label.title} (Color: #{label.color})"
+    end
+  end
+
+  def save_books
+    books_data = []
+    @books.each do |book|
+      books_data.push({ publish_date: book.publish_date, publisher: book.publisher, cover_state: book.cover_state,
+                        label: { title: book.label.title, color: book.label.color } })
+    end
+    File.write('data/books.json', JSON.pretty_generate(books_data))
+  end
+
+  def save_labels
+    File.open('data/labels.json', 'w') do |file|
+      label_data = @labels.map do |label|
+        {
+          'id' => label.id,
+          'title' => label.title,
+          'color' => label.color
+        }
+      end
+      file.write(JSON.generate(label_data))
     end
   end
 end

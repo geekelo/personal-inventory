@@ -2,7 +2,7 @@ require_relative 'apps/game_app'
 require_relative 'apps/movie_app'
 require_relative 'apps/music_album_app'
 require_relative 'apps/book_app'
-
+require_relative 'apps/book_helper'
 require 'json'
 
 def display_menu
@@ -62,6 +62,8 @@ loop do
     book_app.add_label
   when 14
     # Exit Console App
+    book_app.save_books
+    book_app.save_labels
     game_app.save_data
     puts 'Thanks for using Personal Inventory app!'
     break
