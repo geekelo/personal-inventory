@@ -6,8 +6,8 @@ class MovieApp
   attr_accessor :movies
 
   def initialize
-  # Initialize movies
-   @movies = movies_load_data
+    # Initialize movies
+    @movies = movies_load_data
   end
 
   # Load existing data from MOVIES JSON files (if any)
@@ -22,7 +22,7 @@ class MovieApp
     end
     movies
   end
-  
+
   # Save data to MOVIES JSON files
   def movies_save_data(movies)
     File.open('data/movies.json', 'w') do |file|
@@ -31,6 +31,7 @@ class MovieApp
       end
     end
   end
+
   # List existing movies
   def list_movies
     puts 'List of Movies:'

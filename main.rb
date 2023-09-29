@@ -3,7 +3,6 @@ require_relative 'apps/movie_app'
 require_relative 'apps/music_album_app'
 require 'json'
 
-
 def display_menu
   puts '------------------------------------------------------'
   puts 'Welcome to the Catalog of My Things!'
@@ -25,9 +24,8 @@ def display_menu
   puts '15 - Exit'
 end
 
-
 movie_app = MovieApp.new
-music_album_app = Music_albumApp.new
+music_album_app = MusicAlbumApp.new
 app = GameApp.new
 loop do
   display_menu
@@ -60,7 +58,7 @@ loop do
     music_album_app.add_music_album
   when 11
     # Add A Movie
-   movie_app.add_movie
+    movie_app.add_movie
   when 12
     app.add_game
   when 13

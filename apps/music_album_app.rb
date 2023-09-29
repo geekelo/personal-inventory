@@ -2,10 +2,10 @@ require_relative '../class/item'
 require_relative '../class/music_album'
 require_relative '../class/genre'
 
-class Music_albumApp
+class MusicAlbumApp
   def initialize
-  # Initialize music_albums
-  @music_albums = music_load_data
+    # Initialize music_albums
+    @music_albums = music_load_data
   end
   # Load existing data from MUSIC_ALBUMS JSON files (if any)
   def music_load_data
@@ -19,7 +19,7 @@ class Music_albumApp
     end
     music_albums
   end
-  
+
   # Save data to MUSIC_ALBUMS JSON files
   def music_save_data(music_albums)
     File.open('data/music_album.json', 'w') do |file|
@@ -75,4 +75,4 @@ class Music_albumApp
 
     puts 'Genre added!'
   end
-end 
+end
