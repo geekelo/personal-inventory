@@ -19,14 +19,13 @@ def display_menu
   puts '10 - Add a music album'
   puts '11 - Add a movie'
   puts '12 - Add a game'
-  puts '13 - Add a label'
-  puts '14 - Add a author'
-  puts '15 - Exit'
+  puts '13 - Exit'
 end
 
 movie_app = MovieApp.new
 music_album_app = MusicAlbumApp.new
-app = GameApp.new
+game_app = GameApp.new
+game_app.load_data
 loop do
   display_menu
   option = gets.chomp.to_i
@@ -40,14 +39,14 @@ loop do
     # List All Movies
     movie_app.list_movies
   when 4
-    app.list_games
+    game_app.list_games
   when 5
     # List All Genre
     music_album_app.list_music_album_genres
   when 6
     # your code here
   when 7
-    app.list_authors
+    game_app.list_authors
   when 8
     # List All Sources
     movie_app.list_movie_source
@@ -60,13 +59,10 @@ loop do
     # Add A Movie
     movie_app.add_movie
   when 12
-    app.add_game
+    game_app.add_game
   when 13
-    # your code here
-  when 14
-    app.add_author
-  when 15
     # Exit Console App
+    game_app.save_data
     puts 'Thanks for using Personal Inventory app!'
     break
   else
