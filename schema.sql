@@ -14,7 +14,7 @@ CREATE TABLE sources (
     name VARCHAR(255)
 );
 -- Define the music_album table
-CREATE TABLE movies (
+CREATE TABLE music_album (
     id INT PRIMARY KEY,
     title VARCHAR(255),
     publish_date DATE,

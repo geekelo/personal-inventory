@@ -1,7 +1,7 @@
-require_relative 'class/game'
-require_relative 'class/author'
+require_relative '../class/game'
+require_relative '../class/author'
 
-class App
+class GameApp
   attr_accessor :games, :authors
 
   def initialize
