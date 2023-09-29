@@ -25,7 +25,6 @@ class MusicAlbum < Item
   end
 
   def self.from_json(json)
-    puts "Received JSON: #{json}"
     data = JSON.parse(json)
     item = new(data['title'], data['publish_date'])
     item.archived = data['archived']
