@@ -1,6 +1,8 @@
 require_relative 'apps/game_app'
 require_relative 'apps/movie_app'
 require_relative 'apps/music_album_app'
+require_relative 'apps/book_app'
+
 require 'json'
 
 def display_menu
@@ -19,11 +21,13 @@ def display_menu
   puts '10 - Add a music album'
   puts '11 - Add a movie'
   puts '12 - Add a game'
-  puts '13 - Exit'
+  puts '13 - Add a Label'
+  puts '14 - Exit'
 end
 
 movie_app = MovieApp.new
 music_album_app = MusicAlbumApp.new
+book_app = BookApp.new
 game_app = GameApp.new
 game_app.load_data
 loop do
@@ -31,36 +35,32 @@ loop do
   option = gets.chomp.to_i
   case option
   when 1
-    # your code here
+    book_app.list_books
   when 2
-    # List All Music Albums
     music_album_app.list_music_albums
   when 3
-    # List All Movies
     movie_app.list_movies
   when 4
     game_app.list_games
   when 5
-    # List All Genre
     music_album_app.list_music_album_genres
   when 6
-    # your code here
+    book_app.list_labels
   when 7
     game_app.list_authors
   when 8
-    # List All Sources
     movie_app.list_movie_source
   when 9
-    # your code here
+    book_app.add_book
   when 10
-    # Add A Music
     music_album_app.add_music_album
   when 11
-    # Add A Movie
     movie_app.add_movie
   when 12
     game_app.add_game
   when 13
+    book_app.add_label
+  when 14
     # Exit Console App
     game_app.save_data
     puts 'Thanks for using Personal Inventory app!'
