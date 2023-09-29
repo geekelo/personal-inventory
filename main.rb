@@ -3,6 +3,7 @@ require_relative 'class/movie'
 require_relative 'class/source'
 require_relative 'class/music_album'
 require_relative 'class/genre'
+require_relative 'app'
 require 'json'
 
 # Load existing data from MOVIES JSON files (if any)
@@ -78,6 +79,7 @@ def display_menu
   puts '17 - Exit'
 end
 
+app = App.new
 loop do
   display_menu
   option = gets.chomp.to_i
@@ -97,7 +99,7 @@ loop do
       puts "- Title: #{item.title}, Source: #{item.source}, Published: #{item.publish_date}, Archived: #{item.archived}"
     end
   when 4
-    # your code here
+    app.list_games
   when 5
     # List All Genre
     puts 'List of Genre:'
@@ -108,7 +110,7 @@ loop do
   when 6
     # your code here
   when 7
-    # your code here
+    app.list_authors
   when 8
     # List All Sources
     puts 'List of Sources:'
@@ -147,7 +149,7 @@ loop do
 
     puts 'Movie added!'
   when 12
-    # your code here
+    app.add_game
   when 13
     # Add Music_album genre
     puts 'Enter genre name:'
@@ -162,7 +164,7 @@ loop do
   when 14
     # your code here
   when 15
-    # your code here
+    app.add_author
   when 16
     # Add Movie Source
     puts 'Enter source name:'

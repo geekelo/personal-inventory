@@ -3,7 +3,7 @@ require 'date'
 
 describe Game do
   before :each do
-    @game = Game.new('2000/10/25', true, '2020/08/13')
+    @game = Game.new('2000/10/25', 'title', true, '2020/08/13')
   end
 
   describe '#new' do
@@ -15,6 +15,12 @@ describe Game do
   describe '#publish_date' do
     it 'return the date which game published at' do
       expect(@game.publish_date).to eq(Date.parse('2000/10/25'))
+    end
+  end
+
+  describe '#title' do
+    it 'return the title of the game' do
+      expect(@game.title).to eq('title')
     end
   end
 
@@ -33,7 +39,7 @@ describe Game do
   describe '#can_be_archived?' do
     it 'reyurn true if it is more than 10 years passed of it publishing otherwise false' do
       expect(@game.can_be_archived?).to be_truthy
-      game2 = Game.new('2021/09/02', true, '2021/12/20')
+      game2 = Game.new('2021/09/02', 'title', true, '2021/12/20')
       expect(game2.can_be_archived?).to be_falsy
     end
   end
