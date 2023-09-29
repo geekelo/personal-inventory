@@ -2,7 +2,6 @@ require_relative '../class/item'
 require_relative '../class/movie'
 require_relative '../class/source'
 
-# Load existing data from MOVIES JSON files (if any)
 class MovieApp
   attr_accessor :movies
 
@@ -11,6 +10,7 @@ class MovieApp
    @movies = movies_load_data
   end
 
+  # Load existing data from MOVIES JSON files (if any)
   def movies_load_data
     movies = []
     if File.exist?('data/movies.json')
