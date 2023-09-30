@@ -143,7 +143,7 @@ To run the project, execute the following command:
 - Twitter: [@ChandanGuptaDev](https://twitter.com/ChandanGuptaDev)
 - LinkedIn: [@chandangupta-devs](https://www.linkedin.com/in/chandangupta-devs)
 
-👤 **Chandan Gupta**
+👤 **Ayomide Emmanuel**
 
 - GitHub: [@Paulinelali](https://github.com/Paulinelali)
 - Twitter: [@ayomide-emmanuel](https://www.linkedin.com/in/ayomide-emmanuel-1353b31b9/)
