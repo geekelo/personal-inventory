@@ -21,8 +21,7 @@ def display_menu
   puts '10 - Add a music album'
   puts '11 - Add a movie'
   puts '12 - Add a game'
-  puts '13 - Add a Label'
-  puts '14 - Exit'
+  puts '13 - Exit'
 end
 
 movie_app = MovieApp.new
@@ -59,8 +58,6 @@ loop do
   when 12
     game_app.add_game
   when 13
-    book_app.add_label
-  when 14
     # Exit Console App
     book_app.save_books
     book_app.save_labels
