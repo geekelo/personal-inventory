@@ -16,6 +16,7 @@
 - [📖 PERSONAL INVENTORY ](#-personal-inventory-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
+    - [Video Presentation ](#video-presentation-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -37,7 +38,7 @@
 **PERSONAL INVENTORY CONSOLE APP** is a t a simple console app built with Ruby that allows users to manage collections of the movies, games, music albums and books they own.
 This project is based on the following UML class diagram.
 
-![Alt text](image.png). 
+![Alt text](image.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -51,14 +52,18 @@ This project is based on the following UML class diagram.
   </ul>
 </details>
 
+<!-- Video Presentation -->
+### Video Presentation <a name="video-presentation"></a>
+[See Video](https://drive.google.com/file/d/1p01lZr5ACIx3p_ULbuULAGKr54G_LlRQ/view?usp=sharing)
+
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Present the user with a list of options to perform.**
+- **Presents the user with a list of options to perform.**
 - **Let users choose an option.**
-- **If needed, ask for parameters for the option.**
+- **If needed, asks for parameters for the option.**
 - **Has a way to quit the app.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -126,6 +131,25 @@ To run the project, execute the following command:
 - Twitter: [@twitterhandle](https://twitter.com/geekelo_xyz)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/eloghene-otiede)
 
+👤 **Melkamu Almawu**
+
+- GitHub: [@melkamu12](https://github.com/melkamu12)
+- Facebook: [@Melkamu Almawu](https://www.facebook.com/people/Melkamu-Almawu/pfbid028hQsqdkxPj8AuN9RFqvCFArmhEP2kcaFNRPL5X8Cri14ZTStjVNPNj2kevtq8GSJl/)
+- LinkedIn: [Melkamu Almawu](https://www.linkedin.com/in/melkamu-almawu/)
+
+👤 **Chandan Gupta**
+
+- GitHub: [@Chandan-devs-tech](https://github.com/Chandan-devs-tech)
+- Twitter: [@ChandanGuptaDev](https://twitter.com/ChandanGuptaDev)
+- LinkedIn: [@chandangupta-devs](https://www.linkedin.com/in/chandangupta-devs)
+
+👤 **Chandan Gupta**
+
+- GitHub: [@Paulinelali](https://github.com/Paulinelali)
+- Twitter: [@ayomide-emmanuel](https://www.linkedin.com/in/ayomide-emmanuel-1353b31b9/)
+- LinkedIn: [@ayomide-emmanuel](https://www.linkedin.com/in/ayomide-emmanuel-1353b31b9/)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,7 +191,7 @@ If you like this project drop a ⭐️
 
 I would like to thank from Microverse for adding the guidlines of project.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- LICENSE -->
